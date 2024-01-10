@@ -128,7 +128,7 @@ set.seed(1)
 X_explain    <- train[sample(1:nrow(train), 1000), xvars]
 X_background <- train[sample(1:nrow(train), 200), ]
 
-system.time(  # 10 minutes
+system.time(  # 2.7 minutes instead of 10mins .
   shap_values <- permshap(model, X = X_explain, bg_X = X_background, pred_fun = pf)
 )
 shap_values <- shapviz(shap_values)
